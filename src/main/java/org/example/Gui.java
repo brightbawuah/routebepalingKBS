@@ -291,7 +291,7 @@ public class Gui extends JFrame {
             double distance = earthRadius * c;
             return distance;
         }
-        public static Berekening findNearestNeighbour(List<Berekening> locaties, org.example.Berekening startPoint) {
+        public static org.example.Berekening findNearestNeighbour(List<org.example.Berekening> locaties, org.example.Berekening startPoint) {
             if (locaties.isEmpty()) {
                 return null;
             }
