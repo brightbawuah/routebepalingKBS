@@ -21,7 +21,7 @@ public class Gui extends JFrame {
         String username = "root";
         String password = "";
 
-
+        //Begin inlog
         JDialog jd = new JDialog(this, "Login", true);
         jd.setLayout(new FlowLayout());
         jd.setSize(200, 125);
@@ -120,6 +120,9 @@ public class Gui extends JFrame {
         jd.setResizable(false);
         jd.setLocationRelativeTo(null);
         jd.setVisible(true);
+        //einde inlog
+
+        setSize(new Dimension(400,600));
         String dummiePostcode = "1319AJ";
         String dummieHuisnummer = "9";
         String dummiePostcode2 = "1323LP";
