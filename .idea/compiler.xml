@@ -9,5 +9,8 @@
         <module name="routebepaling_kbs" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="routebepalingKBS" target="1.5" />
+    </bytecodeTargetLevel>
   </component>
 </project>

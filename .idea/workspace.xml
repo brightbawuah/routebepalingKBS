@@ -4,9 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9f41f375-6f86-4c75-bb68-54c6510b90a9" name="Changes" comment="">
+    <list default="true" id="9f41f375-6f86-4c75-bb68-54c6510b90a9" name="Changes" comment="pom.xml dependecy fixen">
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Adres.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Adres.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Berekening.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Berekening.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Gui.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Gui.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Routebepaling.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Routebepaling.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -16,13 +21,18 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
   <component name="ProjectId" id="2QNSQURIeifKXWmdkCikZfIlnxQ" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
     "last_opened_file_path": "C:/xampp/htdocs/routebepalingKBS",
@@ -30,6 +40,10 @@
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -42,6 +56,8 @@
       <option name="presentableId" value="Default" />
       <updated>1685192529706</updated>
       <workItem from="1685192530807" duration="106000" />
+      <workItem from="1685275251324" duration="410000" />
+      <workItem from="1685275698387" duration="5318000" />
     </task>
     <servers />
   </component>
@@ -58,5 +74,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="pom.xml dependecy fixen" />
+    <option name="LAST_COMMIT_MESSAGE" value="pom.xml dependecy fixen" />
   </component>
 </project>
