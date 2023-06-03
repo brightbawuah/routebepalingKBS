@@ -15,13 +15,18 @@ public class Gui extends JFrame {
     String achternaam;
     String email;
     String wachtwoord;
+    public List<String> databaseAdressen = new ArrayList<>();
+
 
     public Gui() {
         String url = "jdbc:mysql://localhost:3306/nerdygadgets";
         String username = "root";
         String password = "";
 
-
+        setSize(400, 600);
+        setDefaultCloseOperation(EXIT_ON_CLOSE);
+        setResizable(false);
+        setLocationRelativeTo(null);
         JDialog jd = new JDialog(this, "Login", true);
         jd.setLayout(new FlowLayout());
         jd.setSize(200, 125);
@@ -120,62 +125,91 @@ public class Gui extends JFrame {
         jd.setResizable(false);
         jd.setLocationRelativeTo(null);
         jd.setVisible(true);
+
+        System.out.println();
+//        try (Connection connection = DriverManager.getConnection(url, username, password)) {
+//
+//            String sql = "SELECT TOP 10 Postcode, Huisnummer FROM bestelling WHERE";
+//            Statement statement = connection.createStatement();
+//            ResultSet rs = statement.executeQuery(sql);
+//            while (rs.next()){
+//                String postcode = rs.getString("Postcode");
+//                String huisnummer = rs.getString("Huisnummer");
+//            }
+//        } catch (SQLException e) {
+//            throw new RuntimeException(e);
+//        }
+
         String dummiePostcode = "1319AJ";
         String dummieHuisnummer = "9";
         String dummiePostcode2 = "1323LP";
         String dummieHuisnummer2 = "9";
         String dummiePostcode3 = "1102AK";
         String dummieHuisnummer3 = "100";
-        String dummiePostcode4 = "1103JP";
-        String dummieHuisnummer4 = "96";
+        String dummiePostcode4 = "1272BC";
+        String dummieHuisnummer4 = "26";
+        String dummiePostcode5 = "1103JP";
+        String dummieHuisnummer5 = "96";
+        String dummiePostcode6 = "1313GA";
+        String dummieHuisnummer6 = "60";
+        String dummiePostcode7 = "1104SE";
+        String dummieHuisnummer7 = "1389";
         String magazinPostcode = "1315RC";
         String magazijnHuisnummer = "5";
 
+        ArrayList<Routebepaling.Adres> gesorteedeAdressen = new ArrayList<>();
 
         Routebepaling locatie = new Routebepaling();
-        LocatieApi api = new LocatieApi(dummiePostcode,dummieHuisnummer);
+        LocatieApi api = new LocatieApi(dummiePostcode, dummieHuisnummer);
         locatie.adressen.add(new Routebepaling.Adres(dummiePostcode, dummieHuisnummer, Double.parseDouble(api.getLatitude()), Double.parseDouble(api.getLongitude())));
-        LocatieApi api2 = new LocatieApi(dummiePostcode2,dummieHuisnummer2);
+        LocatieApi api2 = new LocatieApi(dummiePostcode2, dummieHuisnummer2);
         locatie.adressen.add(new Routebepaling.Adres(dummiePostcode2, dummieHuisnummer2, Double.parseDouble(api2.getLatitude()), Double.parseDouble(api2.getLongitude())));
-        LocatieApi api3 = new LocatieApi(dummiePostcode3,dummieHuisnummer3);
+        LocatieApi api3 = new LocatieApi(dummiePostcode3, dummieHuisnummer3);
         locatie.adressen.add(new Routebepaling.Adres(dummiePostcode3, dummieHuisnummer3, Double.parseDouble(api3.getLatitude()), Double.parseDouble(api3.getLongitude())));
-        LocatieApi api4 = new LocatieApi(dummiePostcode4,dummieHuisnummer4);
+        LocatieApi api4 = new LocatieApi(dummiePostcode4, dummieHuisnummer4);
         locatie.adressen.add(new Routebepaling.Adres(dummiePostcode4, dummieHuisnummer4, Double.parseDouble(api4.getLatitude()), Double.parseDouble(api4.getLongitude())));
+        LocatieApi api5 = new LocatieApi(dummiePostcode5, dummieHuisnummer5);
+        locatie.adressen.add(new Routebepaling.Adres(dummiePostcode5, dummieHuisnummer5, Double.parseDouble(api5.getLatitude()), Double.parseDouble(api5.getLongitude())));
+        LocatieApi api6 = new LocatieApi(dummiePostcode6, dummieHuisnummer6);
+        locatie.adressen.add(new Routebepaling.Adres(dummiePostcode6, dummieHuisnummer6, Double.parseDouble(api6.getLatitude()), Double.parseDouble(api6.getLongitude())));
+        LocatieApi api7 = new LocatieApi(dummiePostcode7, dummieHuisnummer7);
+        locatie.adressen.add(new Routebepaling.Adres(dummiePostcode7, dummieHuisnummer7, Double.parseDouble(api7.getLatitude()), Double.parseDouble(api7.getLongitude())));
 
 
         LocatieApi magazijnApi = new LocatieApi(magazinPostcode, magazijnHuisnummer);
         Routebepaling.Adres startPoint = new Routebepaling.Adres(magazinPostcode, magazijnHuisnummer, Double.parseDouble(magazijnApi.getLatitude()), Double.parseDouble(magazijnApi.getLongitude()));
         Routebepaling.Adres nearestNeighbor = Routebepaling.findNearestNeighbor(locatie.adressen, startPoint);
 
-        System.out.println("Nearest Neighbor: " + nearestNeighbor.getAdres());
 
-        JDialog dialog = new JDialog();
         JPanel panel = new JPanel();
         panel.setLayout(new FlowLayout());
-        JLabel label = new JLabel("Nearest Neighbour: " + nearestNeighbor.getAdres());
+        JLabel label = new JLabel("Volgende locatie: " + nearestNeighbor.getAdres());
         panel.add(label);
 
+        System.out.println(locatie.adressen.size());
+        System.out.println("Eerste Locatie: " + nearestNeighbor.getAdres());
+        System.out.println(locatie.adressen.size());
+        System.out.println(locatie.adressen);
 
-//        for (NearestNeighbour.Locatie i:
-//        int teller;
-//        for (Locatie bestemming : locaties.bezorgLocaties) {
-//
-//            LocatieApi api = new LocatieApi(bezorgLocaties.get(teller).);
-////            for(int i = 0; i > locaties.cities.size(); i++){
-////
-////            }
-//            Adres adres = new Adres("1319AJ", "9");
-//            JLabel bestemming. =new JLabel(adres.getPostcode() + " " + adres.getHuisnummer());
-//            panel.add(locatie);
-//        }
-        JTextField textField = new JTextField();
-        textField.setPreferredSize(new Dimension(100, 25));
-        dialog.add(textField);
-//        JButton button = new JButton();
-//        button.setPreferredSize(new Dimension(100, 25));
-//        button.setText("Button");
-        panel.add(textField);
-//        panel.add(button);
+        for (int i = 0; i < locatie.adressen.size() * locatie.adressen.size(); i++) {
+            if (i == 0) {
+                Routebepaling.Adres adres = Routebepaling.findNearestNeighbor(locatie.adressen, startPoint);
+                gesorteedeAdressen.add(adres);
+                locatie.adressen.remove(adres);
+
+            } else {
+                Routebepaling.Adres adres = Routebepaling.findNearestNeighbor(locatie.adressen, gesorteedeAdressen.get(i - 1));
+                gesorteedeAdressen.add(adres);
+                locatie.adressen.remove(adres);
+            }
+        }
+        System.out.println(gesorteedeAdressen.size());
+        System.out.println("Startpunt: " + magazinPostcode + " " + magazijnHuisnummer);
+        for (int i = 0; i < gesorteedeAdressen.size(); i++) {
+            System.out.println(i + 1 + "e locatie: " + gesorteedeAdressen.get(i).getAdres());
+        }
+        panel.setLayout(new FlowLayout());
+        panel.add(label);
         mainPanel.add(panel);
         mainPanel.setSize(250, 300);
         setLocationRelativeTo(null);
@@ -183,143 +217,5 @@ public class Gui extends JFrame {
         setVisible(true);
     }
 
-//    public static Berekening findNearestNeighbour(List<Berekening> locaties, Berekening startPoint) {
-//        if (locaties.isEmpty()) {
-//            return null;
-//        }
-//
-//        Berekening nearestNeighbour = locaties.get(0);
-//        double shortestDistance = startPoint.distanceTo(nearestNeighbour);
-//
-//        for (int i = 1; i < locaties.size(); i++) {
-//            Berekening currentCity = locaties.get(i);
-//            double currentDistance = startPoint.distanceTo(currentCity);
-//
-//            if (currentDistance < shortestDistance) {
-//                nearestNeighbour = currentCity;
-//                shortestDistance = currentDistance;
-//            }
-//        }
-//
-//        return nearestNeighbour;
-//    }
 
-//    public static class Locatie {
-//        private String adres;
-//        private String postcode;
-//        private String huisnummer;
-//
-//        private double latitude;
-//        private double longitude;
-//
-//        public Locatie(String postcode, String huisnummer, double latitude, double longitude) {
-//            this.adres = postcode + " " + huisnummer;
-//            this.latitude = latitude;
-//            this.longitude = longitude;
-//        }
-//
-//        public String getAdres() {
-//            return adres;
-//        }
-//
-//        public double getLatitude() {
-//            return latitude;
-//        }
-//
-//        public double getLongitude() {
-//            return longitude;
-//        }
-//
-//        public double distanceTo(Berekening other) {
-//            double lat1 = Math.toRadians(this.latitude);
-//            double lon1 = Math.toRadians(this.longitude);
-//            double lat2 = Math.toRadians(other.latitude);
-//            double lon2 = Math.toRadians(other.longitude);
-//
-//            double earthRadius = 6371; // in kilometers
-//
-//            double dLat = lat2 - lat1;
-//            double dLon = lon2 - lon1;
-//
-//            double a = Math.sin(dLat / 2) * Math.sin(dLat / 2) +
-//                    Math.cos(lat1) * Math.cos(lat2) *
-//                            Math.sin(dLon / 2) * Math.sin(dLon / 2);
-//
-//            double c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
-//
-//            double distance = earthRadius * c;
-//            return distance;
-//        }
-//    }
-
-//    public static class Berekening {
-//        private String adres;
-////    private String postcode;
-////    private String huisnummer;
-//
-//        private double latitude;
-//        private double longitude;
-//
-//        public Berekening(String postcode, String huisnummer, double latitude, double longitude) {
-//            this.adres = postcode + " " + huisnummer;
-//            this.latitude = latitude;
-//            this.longitude = longitude;
-//        }
-//
-//        public String getAdres() {
-//            return adres;
-//        }
-//
-//        public double getLatitude() {
-//            return latitude;
-//        }
-//
-//        public double getLongitude() {
-//            return longitude;
-//        }
-//
-//        public double distanceTo(Berekening other) {
-//            double lat1 = Math.toRadians(this.latitude);
-//            double lon1 = Math.toRadians(this.longitude);
-//            double lat2 = Math.toRadians(other.latitude);
-//            double lon2 = Math.toRadians(other.longitude);
-//
-//            double earthRadius = 6371; // in kilometers
-//
-//            double dLat = lat2 - lat1;
-//            double dLon = lon2 - lon1;
-//
-//            double a = Math.sin(dLat / 2) * Math.sin(dLat / 2) +
-//                    Math.cos(lat1) * Math.cos(lat2) *
-//                            Math.sin(dLon / 2) * Math.sin(dLon / 2);
-//
-//            double c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
-//
-//            double distance = earthRadius * c;
-//            return distance;
-//        }
-//
-//        public static Berekening findNearestNeighbour(List<Berekening> locaties, Berekening startPoint) {
-//            if (locaties.isEmpty()) {
-//                return null;
-//            }
-//
-//            Berekening nearestNeighbour = locaties.get(0);
-//            double shortestDistance = startPoint.distanceTo(nearestNeighbour);
-//
-//            for (int i = 1; i < locaties.size(); i++) {
-//                Berekening currentCity = locaties.get(i);
-//                double currentDistance = startPoint.distanceTo(currentCity);
-//
-//                if (currentDistance < shortestDistance) {
-//                    nearestNeighbour = currentCity;
-//                    shortestDistance = currentDistance;
-//                }
-//            }
-//
-//            return nearestNeighbour;
-//        }
-//
-//    }
-//
 }
