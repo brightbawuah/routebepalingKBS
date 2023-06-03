@@ -15,13 +15,18 @@ public class Gui extends JFrame {
     String achternaam;
     String email;
     String wachtwoord;
+    public List<String> databaseAdressen = new ArrayList<>();
+
 
     public Gui() {
         String url = "jdbc:mysql://localhost:3306/nerdygadgets";
         String username = "root";
         String password = "";
 
-        //Begin inlog
+        setSize(400, 600);
+        setDefaultCloseOperation(EXIT_ON_CLOSE);
+        setResizable(false);
+        setLocationRelativeTo(null);
         JDialog jd = new JDialog(this, "Login", true);
         jd.setLayout(new FlowLayout());
         jd.setSize(200, 125);
@@ -120,22 +125,39 @@ public class Gui extends JFrame {
         jd.setResizable(false);
         jd.setLocationRelativeTo(null);
         jd.setVisible(true);
-        //einde inlog
 
-        setSize(new Dimension(400,600));
+        System.out.println();
+//        try (Connection connection = DriverManager.getConnection(url, username, password)) {
+//
+//            String sql = "SELECT TOP 10 Postcode, Huisnummer FROM bestelling WHERE";
+//            Statement statement = connection.createStatement();
+//            ResultSet rs = statement.executeQuery(sql);
+//            while (rs.next()){
+//                String postcode = rs.getString("Postcode");
+//                String huisnummer = rs.getString("Huisnummer");
+//            }
+//        } catch (SQLException e) {
+//            throw new RuntimeException(e);
+//        }
+
         String dummiePostcode = "1319AJ";
         String dummieHuisnummer = "9";
         String dummiePostcode2 = "1323LP";
         String dummieHuisnummer2 = "9";
         String dummiePostcode3 = "1102AK";
         String dummieHuisnummer3 = "100";
-        String dummiePostcode4 = "1103JP";
-        String dummieHuisnummer4 = "96";
-        String dummiePostcode5 = "1313GA";
-        String dummieHuisnummer5 = "60";
+        String dummiePostcode4 = "1272BC";
+        String dummieHuisnummer4 = "26";
+        String dummiePostcode5 = "1103JP";
+        String dummieHuisnummer5 = "96";
+        String dummiePostcode6 = "1313GA";
+        String dummieHuisnummer6 = "60";
+        String dummiePostcode7 = "1104SE";
+        String dummieHuisnummer7 = "1389";
         String magazinPostcode = "1315RC";
         String magazijnHuisnummer = "5";
 
+        ArrayList<Routebepaling.Adres> gesorteedeAdressen = new ArrayList<>();
 
         Routebepaling locatie = new Routebepaling();
         LocatieApi api = new LocatieApi(dummiePostcode, dummieHuisnummer);
@@ -148,6 +170,10 @@ public class Gui extends JFrame {
         locatie.adressen.add(new Routebepaling.Adres(dummiePostcode4, dummieHuisnummer4, Double.parseDouble(api4.getLatitude()), Double.parseDouble(api4.getLongitude())));
         LocatieApi api5 = new LocatieApi(dummiePostcode5, dummieHuisnummer5);
         locatie.adressen.add(new Routebepaling.Adres(dummiePostcode5, dummieHuisnummer5, Double.parseDouble(api5.getLatitude()), Double.parseDouble(api5.getLongitude())));
+        LocatieApi api6 = new LocatieApi(dummiePostcode6, dummieHuisnummer6);
+        locatie.adressen.add(new Routebepaling.Adres(dummiePostcode6, dummieHuisnummer6, Double.parseDouble(api6.getLatitude()), Double.parseDouble(api6.getLongitude())));
+        LocatieApi api7 = new LocatieApi(dummiePostcode7, dummieHuisnummer7);
+        locatie.adressen.add(new Routebepaling.Adres(dummiePostcode7, dummieHuisnummer7, Double.parseDouble(api7.getLatitude()), Double.parseDouble(api7.getLongitude())));
 
 
         LocatieApi magazijnApi = new LocatieApi(magazinPostcode, magazijnHuisnummer);
@@ -162,28 +188,34 @@ public class Gui extends JFrame {
 
         System.out.println(locatie.adressen.size());
         System.out.println("Eerste Locatie: " + nearestNeighbor.getAdres());
+        System.out.println(locatie.adressen.size());
+        System.out.println(locatie.adressen);
 
-
-        for (int i = 0; i < locatie.adressen.size(); i++) {
-
+        for (int i = 0; i < locatie.adressen.size() * locatie.adressen.size(); i++) {
             if (i == 0) {
-                System.out.println(nearestNeighbor.getAdres());
+                Routebepaling.Adres adres = Routebepaling.findNearestNeighbor(locatie.adressen, startPoint);
+                gesorteedeAdressen.add(adres);
+                locatie.adressen.remove(adres);
+
             } else {
-                nearestNeighbor = Routebepaling.findNearestNeighbor(locatie.adressen, locatie.adressen.get(i));
-                System.out.println(nearestNeighbor.getAdres());
+                Routebepaling.Adres adres = Routebepaling.findNearestNeighbor(locatie.adressen, gesorteedeAdressen.get(i - 1));
+                gesorteedeAdressen.add(adres);
+                locatie.adressen.remove(adres);
             }
-
         }
-//
-//            volgendeLocatie = Routebepaling.findNearestNeighbor(locatie.adressen, locatie.adressen.get(i));
-//            System.out.println("Volgende locatie: " + volgendeLocatie.getAdres());
-
+        System.out.println(gesorteedeAdressen.size());
+        System.out.println("Startpunt: " + magazinPostcode + " " + magazijnHuisnummer);
+        for (int i = 0; i < gesorteedeAdressen.size(); i++) {
+            System.out.println(i + 1 + "e locatie: " + gesorteedeAdressen.get(i).getAdres());
+        }
+        panel.setLayout(new FlowLayout());
+        panel.add(label);
+        mainPanel.add(panel);
+        mainPanel.setSize(250, 300);
+        setLocationRelativeTo(null);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setVisible(true);
     }
 
-//        mainPanel.add(panel);
-//        mainPanel.setSize(1000, 600);
-//        setLocationRelativeTo(null);
-//        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-//        setVisible(true);
+
 }
-//}
