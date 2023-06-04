@@ -1,10 +1,7 @@
 package org.example;
 
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.awt.event.WindowEvent;
-import java.awt.event.WindowListener;
+import java.awt.event.*;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -221,12 +218,7 @@ public class Gui extends JFrame {
         System.out.println(gesorteedeAdressen.size());
         System.out.println("Startpunt: " + startPoint.getAdres());
         for (int i = 0; i < gesorteedeAdressen.size(); i++) {
-            Panel adresRegel = new Panel();
-            System.out.println(i + 1 + "e locatie: " + gesorteedeAdressen.get(i).getAdres());
-            JLabel volgordeAdressen = new JLabel(i + 1 + "e locatie: " + gesorteedeAdressen.get(i).getAdres());
-            JCheckBox checkBox = new JCheckBox();
-            adresRegel.add(volgordeAdressen, checkBox);
-            mainPanel.add(adresRegel);
+           mainPanel.add(new AdresRegel(gesorteedeAdressen.get(i).getPostcode(),gesorteedeAdressen.get(i).getHuisnummer(),i));
         }
         panel.setLayout(new FlowLayout());
 
