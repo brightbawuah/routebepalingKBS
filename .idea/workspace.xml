@@ -4,9 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9f41f375-6f86-4c75-bb68-54c6510b90a9" name="Changes" comment="pom.xml dependecy fixen">
+    <list default="true" id="9f41f375-6f86-4c75-bb68-54c6510b90a9" name="Changes" comment="loop toegevoegd die moeten kijken naar welke locatie de nearestneighbour is">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Gui.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Gui.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/Gui$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/Gui$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/Gui$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/Gui$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/Gui.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/Gui.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,7 +64,14 @@
       <option name="project" value="LOCAL" />
       <updated>1685436890916</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="loop toegevoegd die moeten kijken naar welke locatie de nearestneighbour is">
+      <created>1685787468149</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1685787468149</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -82,16 +92,5 @@
     <MESSAGE value="pom.xml dependecy fixen" />
     <MESSAGE value="loop toegevoegd die moeten kijken naar welke locatie de nearestneighbour is" />
     <option name="LAST_COMMIT_MESSAGE" value="loop toegevoegd die moeten kijken naar welke locatie de nearestneighbour is" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/example/LocatieApi.java</url>
-          <line>52</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>
