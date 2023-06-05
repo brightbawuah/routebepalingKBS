@@ -41,9 +41,9 @@ public class LocatieApi {
                 JSONObject data2 = new JSONObject(coordinaten.toString());
                 String latitude = data2.optString("lat");
                 String longitude = data2.optString("lon");
-                System.out.println(response);
-                System.out.println("latitude = " + latitude);
-                System.out.println("longitude = " + longitude);
+//                System.out.println(response);
+//                System.out.println("latitude = " + latitude);
+//                System.out.println("longitude = " + longitude);
                 this.latitude = latitude;
                 this.longitude = longitude;
 
