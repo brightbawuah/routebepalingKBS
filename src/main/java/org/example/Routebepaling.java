@@ -27,6 +27,7 @@ public class Routebepaling {
 
         Adres nearestNeighbor = adressen.get(0);
         double shortestDistance = startPoint.distanceTo(nearestNeighbor);
+        System.out.println(shortestDistance);
 
         for (int i = 1; i < adressen.size(); i++) {
             Adres currentAdres = adressen.get(i);

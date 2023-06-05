@@ -141,11 +141,11 @@ public class Gui extends JFrame {
             JOptionPane.showMessageDialog(mainPanel, e.getMessage(), "Connection error", JOptionPane.ERROR_MESSAGE);
         }
 
-        System.out.println("adressen uit de database: " + databasePostcode + databaseHuisnummer);
-
-        System.out.println(databasePostcode.size() + " database postcodes aantal");
-        System.out.println(databaseHuisnummer.size() + " database huisnummers aantal");
-        System.out.println(databaseHuisnummer.get(1));
+//        System.out.println("adressen uit de database: " + databasePostcode + databaseHuisnummer);
+//
+//        System.out.println(databasePostcode.size() + " database postcodes aantal");
+//        System.out.println(databaseHuisnummer.size() + " database huisnummers aantal");
+//        System.out.println(databaseHuisnummer.get(1));
 //        String dummiePostcode = "1319AJ";
 //        String dummieHuisnummer = "9";
 //        String dummiePostcode2 = "1323LP";
@@ -197,10 +197,10 @@ public class Gui extends JFrame {
         JLabel label = new JLabel("Startpunt: " + startPoint.getAdres());
         mainPanel.add(label);
 
-        System.out.println(locatie.adressen.size());
-        System.out.println("Eerste Locatie: " + nearestNeighbor.getAdres());
-        System.out.println(locatie.adressen.size());
-        System.out.println(locatie.adressen);
+//        System.out.println(locatie.adressen.size());
+//        System.out.println("Eerste Locatie: " + nearestNeighbor.getAdres());
+//        System.out.println(locatie.adressen.size());
+//        System.out.println(locatie.adressen);
 
         for (int i = 0; i < locatie.adressen.size() * 10; i++) {
             if (i == 0) {
@@ -214,9 +214,9 @@ public class Gui extends JFrame {
                 locatie.adressen.remove(adres);
             }
         }
-        System.out.println(locatie.adressen.size());
-        System.out.println(gesorteedeAdressen.size());
-        System.out.println("Startpunt: " + startPoint.getAdres());
+//        System.out.println(locatie.adressen.size());
+//        System.out.println(gesorteedeAdressen.size());
+//        System.out.println("Startpunt: " + startPoint.getAdres());
         for (int i = 0; i < gesorteedeAdressen.size(); i++) {
            mainPanel.add(new AdresRegel(gesorteedeAdressen.get(i).getPostcode(),gesorteedeAdressen.get(i).getHuisnummer(),i));
         }

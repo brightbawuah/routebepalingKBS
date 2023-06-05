@@ -4,13 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9f41f375-6f86-4c75-bb68-54c6510b90a9" name="Changes" comment="adresgegevens worden correct uit de database opgehaald">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/AdresRegel.java" afterDir="false" />
+    <list default="true" id="9f41f375-6f86-4c75-bb68-54c6510b90a9" name="Changes" comment="Checkbox toevoegen die de database update">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/AdresRegel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/AdresRegel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Gui.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Gui.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/example/Gui$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/Gui$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/example/Gui$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/Gui$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/LocatieApi.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/LocatieApi.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Routebepaling.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Routebepaling.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/AdresRegel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/AdresRegel.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/org/example/Gui.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/Gui.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/LocatieApi.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/LocatieApi.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,6 +69,9 @@
       <workItem from="1685192530807" duration="106000" />
       <workItem from="1685275251324" duration="410000" />
       <workItem from="1685275698387" duration="5318000" />
+      <workItem from="1685906774380" duration="611000" />
+      <workItem from="1685907462683" duration="117000" />
+      <workItem from="1685959101043" duration="922000" />
     </task>
     <task id="LOCAL-00001" summary="loop toegevoegd die moeten kijken naar welke locatie de nearestneighbour is">
       <created>1685436890916</created>
@@ -86,7 +94,14 @@
       <option name="project" value="LOCAL" />
       <updated>1685898954557</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Checkbox toevoegen die de database update">
+      <created>1685904794621</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1685904794621</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -107,6 +122,7 @@
     <MESSAGE value="pom.xml dependecy fixen" />
     <MESSAGE value="loop toegevoegd die moeten kijken naar welke locatie de nearestneighbour is" />
     <MESSAGE value="adresgegevens worden correct uit de database opgehaald" />
-    <option name="LAST_COMMIT_MESSAGE" value="adresgegevens worden correct uit de database opgehaald" />
+    <MESSAGE value="Checkbox toevoegen die de database update" />
+    <option name="LAST_COMMIT_MESSAGE" value="Checkbox toevoegen die de database update" />
   </component>
 </project>

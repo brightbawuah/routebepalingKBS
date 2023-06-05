@@ -14,7 +14,7 @@ public class AdresRegel extends JPanel {
         String username = "root";
         String password = "";
 
-        System.out.println(positie + 1 + "e locatie: " + postcode + " " + huisnummer);
+//        System.out.println(positie + 1 + "e locatie: " + postcode + " " + huisnummer);
         JLabel positieTekst = new JLabel(positie + 1 + "e locatie: ");
         JLabel volgordeAdressen = new JLabel(postcode + " " + huisnummer);
         JCheckBox checkBox = new JCheckBox();
