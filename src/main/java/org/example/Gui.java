@@ -21,7 +21,7 @@ public class Gui extends JFrame {
         String username = "root";
         String password = "";
 
-        setSize(400, 600);
+        setSize(820, 450);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setResizable(false);
         setLocationRelativeTo(null);
@@ -45,7 +45,7 @@ public class Gui extends JFrame {
         jd.add(button);
         JPanel mainPanel = new JPanel();
 
-        mainPanel.setSize(new Dimension(500,700));
+        mainPanel.setSize(new Dimension(500, 700));
         mainPanel.setPreferredSize(new Dimension(500, 700));
         add(mainPanel);
         jd.addWindowListener(new WindowListener() {
@@ -127,7 +127,7 @@ public class Gui extends JFrame {
         System.out.println();
         try (Connection connection = DriverManager.getConnection(url, username, password)) {
 
-            String sql = "SELECT Postcode, Huisnummer FROM `bestelling` WHERE afgeleverd is NULL ORDER BY datum DESC LIMIT 10;";
+            String sql = "SELECT Postcode, Huisnummer FROM `bestelling` WHERE afgeleverd is NULL ORDER BY datum ASC LIMIT 10;";
             Statement statement = connection.createStatement();
             ResultSet rs = statement.executeQuery(sql);
             while (rs.next()) {
@@ -169,7 +169,7 @@ public class Gui extends JFrame {
 
         for (int i = 0; i < databasePostcode.size(); i++) {
             LocatieApi api = new LocatieApi(databasePostcode.get(i), databaseHuisnummer.get(i));
-            locatie.adressen.add(new Routebepaling.Adres(databasePostcode.get(i), databaseHuisnummer.get(i), Double.parseDouble(api.getLatitude()), Double.parseDouble(api.getLongitude())));
+            locatie.adressen.add(new Routebepaling.Adres(databasePostcode.get(i), databaseHuisnummer.get(i), api.getStad(), api.getStraat(), Double.parseDouble(api.getLatitude()), Double.parseDouble(api.getLongitude())));
         }
 //        LocatieApi api = new LocatieApi(dummiePostcode, dummieHuisnummer);
 //        locatie.adressen.add(new Routebepaling.Adres(dummiePostcode, dummieHuisnummer, Double.parseDouble(api.getLatitude()), Double.parseDouble(api.getLongitude())));
@@ -188,7 +188,7 @@ public class Gui extends JFrame {
 
 
         LocatieApi magazijnApi = new LocatieApi(magazinPostcode, magazijnHuisnummer);
-        Routebepaling.Adres startPoint = new Routebepaling.Adres(magazinPostcode, magazijnHuisnummer, Double.parseDouble(magazijnApi.getLatitude()), Double.parseDouble(magazijnApi.getLongitude()));
+        Routebepaling.Adres startPoint = new Routebepaling.Adres(magazinPostcode, magazijnHuisnummer, magazijnApi.getStad(), magazijnApi.getStraat(), Double.parseDouble(magazijnApi.getLatitude()), Double.parseDouble(magazijnApi.getLongitude()));
         Routebepaling.Adres nearestNeighbor = Routebepaling.findNearestNeighbor(locatie.adressen, startPoint);
 
 
@@ -218,12 +218,15 @@ public class Gui extends JFrame {
 //        System.out.println(gesorteedeAdressen.size());
 //        System.out.println("Startpunt: " + startPoint.getAdres());
         for (int i = 0; i < gesorteedeAdressen.size(); i++) {
-           mainPanel.add(new AdresRegel(gesorteedeAdressen.get(i).getPostcode(),gesorteedeAdressen.get(i).getHuisnummer(),i));
+            mainPanel.add(new AdresRegel(gesorteedeAdressen.get(i).getPostcode(), gesorteedeAdressen.get(i).getHuisnummer(),gesorteedeAdressen.get(i).getAdres(), i));
+//            System.out.println(gesorteedeAdressen.get(i).getAdres());
         }
         panel.setLayout(new FlowLayout());
 
+
         mainPanel.add(panel);
-        mainPanel.setSize(400, 600);
+        mainPanel.setSize(800, 600);
+        mainPanel.setAlignmentX(CENTER_ALIGNMENT);
         setLocationRelativeTo(null);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setVisible(true);
