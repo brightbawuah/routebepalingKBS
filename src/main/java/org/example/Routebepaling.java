@@ -1,5 +1,6 @@
 package org.example;
 
+import java.security.PrivateKey;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -43,19 +44,23 @@ public class Routebepaling {
 
     public static class Adres {
         private String postcode;
+        private String stad;
+        private String straat;
         private String huisnummer;
         private double latitude;
         private double longitude;
 
-        public Adres(String postcode, String huisnummer, double latitude, double longitude) {
+        public Adres(String postcode, String huisnummer, String stad, String straat, double latitude, double longitude) {
             this.postcode = postcode;
             this.huisnummer = huisnummer;
             this.latitude = latitude;
             this.longitude = longitude;
+            this.stad = stad;
+            this.straat = straat;
         }
 
         public String getAdres() {
-            return postcode + " " + huisnummer;
+            return stad + " " + postcode + " " + straat + " " + huisnummer;
         }
 
         public String getPostcode() {

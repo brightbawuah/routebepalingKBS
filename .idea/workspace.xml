@@ -4,20 +4,30 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9f41f375-6f86-4c75-bb68-54c6510b90a9" name="Changes" comment="pom.xml dependecy fixen">
+    <list default="true" id="9f41f375-6f86-4c75-bb68-54c6510b90a9" name="Changes" comment="Checkbox toevoegen die de database update">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/AdresRegel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/AdresRegel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Gui.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Gui.java" afterDir="false" />
-<<<<<<< Updated upstream
-=======
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/LocatieApi.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/LocatieApi.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Routebepaling.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Routebepaling.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/AdresRegel$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/AdresRegel$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/AdresRegel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/AdresRegel.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/org/example/Gui.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/Gui.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/org/example/LocatieApi.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/LocatieApi.class" afterDir="false" />
->>>>>>> Stashed changes
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/Routebepaling$Adres.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/Routebepaling$Adres.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/Routebepaling.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/Routebepaling.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -48,6 +58,26 @@
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
+  <component name="RunManager">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.example.Main" />
+      <module name="routebepaling_kbs" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.example.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Main" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -59,16 +89,10 @@
       <workItem from="1685192530807" duration="106000" />
       <workItem from="1685275251324" duration="410000" />
       <workItem from="1685275698387" duration="5318000" />
-<<<<<<< Updated upstream
-=======
       <workItem from="1685906774380" duration="611000" />
       <workItem from="1685907462683" duration="117000" />
       <workItem from="1685959101043" duration="922000" />
       <workItem from="1685990871792" duration="7067000" />
-      <workItem from="1686037481799" duration="1334000" />
-      <workItem from="1686040890259" duration="4944000" />
-      <workItem from="1686648414984" duration="1059000" />
->>>>>>> Stashed changes
     </task>
     <task id="LOCAL-00001" summary="loop toegevoegd die moeten kijken naar welke locatie de nearestneighbour is">
       <created>1685436890916</created>
@@ -77,9 +101,6 @@
       <option name="project" value="LOCAL" />
       <updated>1685436890916</updated>
     </task>
-<<<<<<< Updated upstream
-    <option name="localTasksCounter" value="2" />
-=======
     <task id="LOCAL-00002" summary="loop toegevoegd die moeten kijken naar welke locatie de nearestneighbour is">
       <created>1685787468149</created>
       <option name="number" value="00002" />
@@ -108,15 +129,7 @@
       <option name="project" value="LOCAL" />
       <updated>1685990923736</updated>
     </task>
-    <task id="LOCAL-00006" summary="Checkbox toevoegen die de database update">
-      <created>1686038009425</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1686038009426</updated>
-    </task>
-    <option name="localTasksCounter" value="7" />
->>>>>>> Stashed changes
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -136,17 +149,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="pom.xml dependecy fixen" />
     <MESSAGE value="loop toegevoegd die moeten kijken naar welke locatie de nearestneighbour is" />
-    <option name="LAST_COMMIT_MESSAGE" value="loop toegevoegd die moeten kijken naar welke locatie de nearestneighbour is" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/example/LocatieApi.java</url>
-          <line>52</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="adresgegevens worden correct uit de database opgehaald" />
+    <MESSAGE value="Checkbox toevoegen die de database update" />
+    <option name="LAST_COMMIT_MESSAGE" value="Checkbox toevoegen die de database update" />
   </component>
 </project>
