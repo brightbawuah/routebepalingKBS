@@ -21,33 +21,46 @@ public class Gui extends JFrame {
         String username = "root";
         String password = "";
 
+
         setSize(820, 450);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setResizable(false);
         setLocationRelativeTo(null);
-        JDialog jd = new JDialog(this, "Login", true);
+
+        JPanel mainPanel = new JPanel();
+        mainPanel.setSize(new Dimension(500, 700));
+        mainPanel.setPreferredSize(new Dimension(500, 700));
+        add(mainPanel);
+
+
+        //Login start
+        JDialog jd = new JDialog(this,"Login", true);
         jd.setLayout(new FlowLayout());
-        jd.setSize(200, 125);
+        jd.setSize(200,125);
         jd.setTitle("Login");
         JPanel jdPanel1 = new JPanel();
-        jdPanel1.setPreferredSize(new Dimension(180, 50));
-        jdPanel1.setLayout(new GridLayout(2, 2));
+        jdPanel1.setPreferredSize(new Dimension(180,50));
+        jdPanel1.setLayout(new GridLayout(2,2));
         JLabel loginLabel = new JLabel("Email");
         jdPanel1.add(loginLabel);
         JTextField textEmail = new JTextField(10);
         jdPanel1.add(textEmail);
         JLabel loginLabel2 = new JLabel("Password");
         jdPanel1.add(loginLabel2);
-        JTextField textPassword = new JTextField(10);
-        jdPanel1.add(textPassword);
+        JPasswordField textPassword2 = new JPasswordField(10);
+//        JTextField textPassword = new JTextField(10);
+        jdPanel1.add(textPassword2);
+//        jdPanel1.add(textPassword);
         JButton button = new JButton("Login");
         jd.add(jdPanel1);
         jd.add(button);
-        JPanel mainPanel = new JPanel();
-
-        mainPanel.setSize(new Dimension(500, 700));
-        mainPanel.setPreferredSize(new Dimension(500, 700));
-        add(mainPanel);
+        JCheckBox hidePasswordCheckbox = new JCheckBox();
+        jd.add(hidePasswordCheckbox);
+        hidePasswordCheckbox.addItemListener(new ItemListener() {
+            public void itemStateChanged(ItemEvent e) {
+                textPassword2.setEchoChar(hidePasswordCheckbox.isSelected() ? '\u0000' : (Character) UIManager.get("PasswordField.echoChar"));
+            }
+        });
         jd.addWindowListener(new WindowListener() {
             @Override
             public void windowOpened(WindowEvent e) {
@@ -87,23 +100,23 @@ public class Gui extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
 
-                try (Connection connection = DriverManager.getConnection(url, username, password)) {
+                try(Connection connection = DriverManager.getConnection(url,username,password)){
 
                     String sql = "SELECT * FROM inloggegevens WHERE BINARY email =? AND BINARY wachtwoord =? AND medewerker = 'JA'";
                     PreparedStatement statement1 = null;
                     statement1 = connection.prepareStatement(sql);
                     statement1.setString(1, textEmail.getText());
-                    statement1.setString(2, textPassword.getText());
+                    statement1.setString(2,textPassword2.getText());
 
 
-                    ResultSet rs1 = statement1.executeQuery();
+                    ResultSet rs1 = statement1.executeQuery() ;
 
-                    if (rs1.next() == false) {
-                        JOptionPane.showMessageDialog(mainPanel, "De inlog is incorrect!", "Incorrect", JOptionPane.ERROR_MESSAGE);
+                    if (rs1.next() == false){
+                        JOptionPane.showMessageDialog(mainPanel, "De inlog is incorrect!","Incorrect",JOptionPane.ERROR_MESSAGE);
                         textEmail.setText("");
-                        textPassword.setText("");
+                        textPassword2.setText("");
                     } else {
-                        JOptionPane.showMessageDialog(mainPanel, "De inlog is correct!", "Correct", JOptionPane.INFORMATION_MESSAGE);
+                        JOptionPane.showMessageDialog(mainPanel, "De inlog is correct!","Correct",JOptionPane.INFORMATION_MESSAGE);
                         voornaam = rs1.getString("Voornaam");
                         achternaam = rs1.getString("Achternaam");
                         email = rs1.getString("Email");
@@ -112,9 +125,11 @@ public class Gui extends JFrame {
                     }
                     statement1.close();
                     connection.close();
-                } catch (SQLException ee) {
-                    JOptionPane.showMessageDialog(mainPanel, ee.getMessage(), "Connection error", JOptionPane.ERROR_MESSAGE);
+                } catch (SQLException ee){
+                    JOptionPane.showMessageDialog(mainPanel, "De database is op dit moment niet beschikbaar!","Connection error",JOptionPane.ERROR_MESSAGE);
                 }
+
+
 
 
             }
@@ -123,6 +138,8 @@ public class Gui extends JFrame {
         jd.setResizable(false);
         jd.setLocationRelativeTo(null);
         jd.setVisible(true);
+
+        //Login einde
 
         System.out.println();
         try (Connection connection = DriverManager.getConnection(url, username, password)) {
@@ -218,7 +235,11 @@ public class Gui extends JFrame {
 //        System.out.println(gesorteedeAdressen.size());
 //        System.out.println("Startpunt: " + startPoint.getAdres());
         for (int i = 0; i < gesorteedeAdressen.size(); i++) {
-            mainPanel.add(new AdresRegel(gesorteedeAdressen.get(i).getPostcode(), gesorteedeAdressen.get(i).getHuisnummer(),gesorteedeAdressen.get(i).getAdres(), i));
+            JPanel adresRegel = new AdresRegel(gesorteedeAdressen.get(i).getPostcode(), gesorteedeAdressen.get(i).getHuisnummer(),gesorteedeAdressen.get(i).getAdres(), i);
+            if(i % 2 == 0){
+                adresRegel.setBackground(new Color(200,200,200));
+            }
+            mainPanel.add(adresRegel);
 //            System.out.println(gesorteedeAdressen.get(i).getAdres());
         }
         panel.setLayout(new FlowLayout());

@@ -39,7 +39,7 @@ public class AdresRegel extends JPanel {
         Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
         double width = screenSize.getWidth();
         int intWidth = (int) width;
-        panel.setPreferredSize(new Dimension(intWidth -5,25));
+        panel.setPreferredSize(new Dimension(760,25));
         panel.setAlignmentX(JComponent.CENTER_ALIGNMENT);
         add(panel);
         add(positieTekst);

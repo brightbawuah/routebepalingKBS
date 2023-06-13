@@ -8,14 +8,8 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/AdresRegel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/AdresRegel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Gui.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Gui.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/LocatieApi.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/LocatieApi.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Routebepaling.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Routebepaling.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/example/AdresRegel$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/AdresRegel$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/org/example/AdresRegel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/AdresRegel.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/org/example/Gui.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/Gui.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/example/LocatieApi.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/LocatieApi.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/example/Routebepaling$Adres.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/Routebepaling$Adres.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/example/Routebepaling.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/Routebepaling.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
