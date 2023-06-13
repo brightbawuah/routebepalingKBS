@@ -5,19 +5,22 @@ import java.net.URL;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+
 import org.json.JSONObject;
 
 
 public class LocatieApi {
     private String postcode;
     private String huisnummer;
-
+    private String stad;
+    private String straat;
     private String latitude;
     private String longitude;
+
     public LocatieApi(String postcode, String huisnummer) {
         this.postcode = postcode;
         this.huisnummer = huisnummer;
-        String API= "31716eb2-d459-4bc8-8e96-d9ced1e7c4a1";
+        String API = "31716eb2-d459-4bc8-8e96-d9ced1e7c4a1";
 
         try {
             String APIlink = "https://postcode.tech/api/v1/postcode/full?postcode=" + postcode + "&number=" + huisnummer;
@@ -41,11 +44,17 @@ public class LocatieApi {
                 JSONObject data2 = new JSONObject(coordinaten.toString());
                 String latitude = data2.optString("lat");
                 String longitude = data2.optString("lon");
+                String straat = data.optString("street");
+                String stad = data.optString("city");
+
+//                System.out.println(straat +" "+ stad);
 //                System.out.println(response);
 //                System.out.println("latitude = " + latitude);
 //                System.out.println("longitude = " + longitude);
                 this.latitude = latitude;
                 this.longitude = longitude;
+                this.stad = stad;
+                this.straat = straat;
 
             } else {
                 System.out.println("Adres bestaat niet");
@@ -62,6 +71,14 @@ public class LocatieApi {
 
     public void setPostcode(String postcode) {
         this.postcode = postcode;
+    }
+
+    public String getStad() {
+        return stad;
+    }
+
+    public String getStraat() {
+        return straat;
     }
 
     public String getLatitude() {

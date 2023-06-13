@@ -9,15 +9,16 @@ import java.sql.*;
 public class AdresRegel extends JPanel {
 
 
-    public AdresRegel(String postcode, String huisnummer, int positie) {
+    public AdresRegel(String postcode, String huisnummer, String adres, int positie) {
         String url = "jdbc:mysql://localhost:3306/nerdygadgets";
         String username = "root";
         String password = "";
 
 //        System.out.println(positie + 1 + "e locatie: " + postcode + " " + huisnummer);
         JLabel positieTekst = new JLabel(positie + 1 + "e locatie: ");
-        JLabel volgordeAdressen = new JLabel(postcode + " " + huisnummer);
+        JLabel volgordeAdressen = new JLabel(adres);
         JCheckBox checkBox = new JCheckBox();
+        JPanel panel = new JPanel();
         checkBox.addItemListener(new ItemListener() {
             public void itemStateChanged(ItemEvent e) {
                 try (Connection connection = DriverManager.getConnection(url, username, password)) {
@@ -35,12 +36,18 @@ public class AdresRegel extends JPanel {
                 }
             }
         });
+        Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
+        double width = screenSize.getWidth();
+        int intWidth = (int) width;
+        panel.setPreferredSize(new Dimension(760,25));
+        panel.setAlignmentX(JComponent.CENTER_ALIGNMENT);
+        add(panel);
         add(positieTekst);
         add(volgordeAdressen);
         add(checkBox);
-        setPreferredSize(new Dimension(380, 25));
+
+        setPreferredSize(new Dimension(intWidth, 25));
         setLayout(new GridLayout(1, 3));
-        setAlignmentX(LEFT_ALIGNMENT);
         setVisible(true);
     }
 }
