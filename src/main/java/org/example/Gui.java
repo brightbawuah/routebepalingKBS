@@ -127,6 +127,7 @@ public class Gui extends JFrame {
         jd.setVisible(true);
 
         System.out.println();
+<<<<<<< Updated upstream
 //        try (Connection connection = DriverManager.getConnection(url, username, password)) {
 //
 //            String sql = "SELECT TOP 10 Postcode, Huisnummer FROM bestelling WHERE";
@@ -154,12 +155,31 @@ public class Gui extends JFrame {
         String dummieHuisnummer6 = "60";
         String dummiePostcode7 = "1104SE";
         String dummieHuisnummer7 = "1389";
+=======
+        try (Connection connection = DriverManager.getConnection(url, username, password)) {
+
+            String sql = "SELECT Postcode, Huisnummer FROM `bestelling` WHERE afgeleverd is NULL ORDER BY datum ASC LIMIT 10;";
+            Statement statement = connection.createStatement();
+            ResultSet rs = statement.executeQuery(sql);
+            while (rs.next()) {
+                String postcode = rs.getString("Postcode");
+                String huisnummer = rs.getString("Huisnummer");
+                databasePostcode.add(postcode);
+                databaseHuisnummer.add(huisnummer);
+
+            }
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(mainPanel, e.getMessage(), "Connection error", JOptionPane.ERROR_MESSAGE);
+        }
+
+>>>>>>> Stashed changes
         String magazinPostcode = "1315RC";
         String magazijnHuisnummer = "5";
 
         ArrayList<Routebepaling.Adres> gesorteedeAdressen = new ArrayList<>();
 
         Routebepaling locatie = new Routebepaling();
+<<<<<<< Updated upstream
         LocatieApi api = new LocatieApi(dummiePostcode, dummieHuisnummer);
         locatie.adressen.add(new Routebepaling.Adres(dummiePostcode, dummieHuisnummer, Double.parseDouble(api.getLatitude()), Double.parseDouble(api.getLongitude())));
         LocatieApi api2 = new LocatieApi(dummiePostcode2, dummieHuisnummer2);
@@ -179,6 +199,18 @@ public class Gui extends JFrame {
         LocatieApi magazijnApi = new LocatieApi(magazinPostcode, magazijnHuisnummer);
         Routebepaling.Adres startPoint = new Routebepaling.Adres(magazinPostcode, magazijnHuisnummer, Double.parseDouble(magazijnApi.getLatitude()), Double.parseDouble(magazijnApi.getLongitude()));
         Routebepaling.Adres nearestNeighbor = Routebepaling.findNearestNeighbor(locatie.adressen, startPoint);
+=======
+
+        for (int i = 0; i < databasePostcode.size(); i++) {
+            LocatieApi api = new LocatieApi(databasePostcode.get(i), databaseHuisnummer.get(i));
+            locatie.adressen.add(new Routebepaling.Adres(databasePostcode.get(i), databaseHuisnummer.get(i), api.getStad(), api.getStraat(), Double.parseDouble(api.getLatitude()), Double.parseDouble(api.getLongitude())));
+        }
+
+
+        LocatieApi magazijnApi = new LocatieApi(magazinPostcode, magazijnHuisnummer);
+        Routebepaling.Adres startPoint = new Routebepaling.Adres(magazinPostcode, magazijnHuisnummer, magazijnApi.getStad(), magazijnApi.getStraat(), Double.parseDouble(magazijnApi.getLatitude()), Double.parseDouble(magazijnApi.getLongitude()));
+//        Routebepaling.Adres nearestNeighbor = Routebepaling.findNearestNeighbor(locatie.adressen, startPoint);
+>>>>>>> Stashed changes
 
 
         JPanel panel = new JPanel();
@@ -186,10 +218,14 @@ public class Gui extends JFrame {
         JLabel label = new JLabel("Volgende locatie: " + nearestNeighbor.getAdres());
         panel.add(label);
 
+<<<<<<< Updated upstream
         System.out.println(locatie.adressen.size());
         System.out.println("Eerste Locatie: " + nearestNeighbor.getAdres());
         System.out.println(locatie.adressen.size());
         System.out.println(locatie.adressen);
+=======
+
+>>>>>>> Stashed changes
 
         for (int i = 0; i < locatie.adressen.size() * locatie.adressen.size(); i++) {
             if (i == 0) {
@@ -203,10 +239,16 @@ public class Gui extends JFrame {
                 locatie.adressen.remove(adres);
             }
         }
+<<<<<<< Updated upstream
         System.out.println(gesorteedeAdressen.size());
         System.out.println("Startpunt: " + magazinPostcode + " " + magazijnHuisnummer);
         for (int i = 0; i < gesorteedeAdressen.size(); i++) {
             System.out.println(i + 1 + "e locatie: " + gesorteedeAdressen.get(i).getAdres());
+=======
+
+        for (int i = 0; i < gesorteedeAdressen.size(); i++) {
+            mainPanel.add(new AdresRegel(gesorteedeAdressen.get(i).getPostcode(), gesorteedeAdressen.get(i).getHuisnummer(),gesorteedeAdressen.get(i).getAdres(), i));
+>>>>>>> Stashed changes
         }
         panel.setLayout(new FlowLayout());
         panel.add(label);

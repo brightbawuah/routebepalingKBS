@@ -7,6 +7,12 @@
     <list default="true" id="9f41f375-6f86-4c75-bb68-54c6510b90a9" name="Changes" comment="pom.xml dependecy fixen">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Gui.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Gui.java" afterDir="false" />
+<<<<<<< Updated upstream
+=======
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/LocatieApi.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/LocatieApi.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/Gui.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/Gui.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/LocatieApi.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/LocatieApi.class" afterDir="false" />
+>>>>>>> Stashed changes
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,6 +59,16 @@
       <workItem from="1685192530807" duration="106000" />
       <workItem from="1685275251324" duration="410000" />
       <workItem from="1685275698387" duration="5318000" />
+<<<<<<< Updated upstream
+=======
+      <workItem from="1685906774380" duration="611000" />
+      <workItem from="1685907462683" duration="117000" />
+      <workItem from="1685959101043" duration="922000" />
+      <workItem from="1685990871792" duration="7067000" />
+      <workItem from="1686037481799" duration="1334000" />
+      <workItem from="1686040890259" duration="4944000" />
+      <workItem from="1686648414984" duration="1059000" />
+>>>>>>> Stashed changes
     </task>
     <task id="LOCAL-00001" summary="loop toegevoegd die moeten kijken naar welke locatie de nearestneighbour is">
       <created>1685436890916</created>
@@ -61,7 +77,46 @@
       <option name="project" value="LOCAL" />
       <updated>1685436890916</updated>
     </task>
+<<<<<<< Updated upstream
     <option name="localTasksCounter" value="2" />
+=======
+    <task id="LOCAL-00002" summary="loop toegevoegd die moeten kijken naar welke locatie de nearestneighbour is">
+      <created>1685787468149</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1685787468149</updated>
+    </task>
+    <task id="LOCAL-00003" summary="adresgegevens worden correct uit de database opgehaald">
+      <created>1685898954557</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1685898954557</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Checkbox toevoegen die de database update">
+      <created>1685904794621</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1685904794621</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Checkbox toevoegen die de database update">
+      <created>1685990923736</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1685990923736</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Checkbox toevoegen die de database update">
+      <created>1686038009425</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1686038009426</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
+>>>>>>> Stashed changes
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

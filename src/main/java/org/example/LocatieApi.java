@@ -41,9 +41,15 @@ public class LocatieApi {
                 JSONObject data2 = new JSONObject(coordinaten.toString());
                 String latitude = data2.optString("lat");
                 String longitude = data2.optString("lon");
+<<<<<<< Updated upstream
                 System.out.println(response);
                 System.out.println("latitude = " + latitude);
                 System.out.println("longitude = " + longitude);
+=======
+                String straat = data.optString("street");
+                String stad = data.optString("city");
+
+>>>>>>> Stashed changes
                 this.latitude = latitude;
                 this.longitude = longitude;
 
@@ -64,6 +70,15 @@ public class LocatieApi {
         this.postcode = postcode;
     }
 
+<<<<<<< Updated upstream
+=======
+    public String getStad() {return stad; }
+
+    public String getStraat() {
+        return straat;
+    }
+
+>>>>>>> Stashed changes
     public String getLatitude() {
         return latitude;
     }
