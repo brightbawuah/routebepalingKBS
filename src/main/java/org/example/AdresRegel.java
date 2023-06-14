@@ -50,7 +50,7 @@ public class AdresRegel extends JPanel {
         checkBox.setHorizontalAlignment(SwingConstants.LEFT);
         add(checkBox);
 
-        setPreferredSize(new Dimension(680, 25));
+        setPreferredSize(new Dimension(780, 25));
         GridBagLayout grid = new GridBagLayout();
 
 
