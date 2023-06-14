@@ -5,6 +5,7 @@ import java.awt.*;
 import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
 import java.sql.*;
+import java.util.zip.GZIPInputStream;
 
 public class AdresRegel extends JPanel {
 
@@ -18,7 +19,7 @@ public class AdresRegel extends JPanel {
         JLabel positieTekst = new JLabel(positie + 1 + "e locatie: ");
         JLabel volgordeAdressen = new JLabel(adres);
         JCheckBox checkBox = new JCheckBox();
-        JPanel panel = new JPanel();
+//        JPanel panel = new JPanel();
         checkBox.addItemListener(new ItemListener() {
             public void itemStateChanged(ItemEvent e) {
                 try (Connection connection = DriverManager.getConnection(url, username, password)) {
@@ -36,17 +37,23 @@ public class AdresRegel extends JPanel {
                 }
             }
         });
-        Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
-        double width = screenSize.getWidth();
-        int intWidth = (int) width;
-        panel.setPreferredSize(new Dimension(760,25));
-        panel.setAlignmentX(JComponent.CENTER_ALIGNMENT);
-        add(panel);
+//        Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
+//        double width = screenSize.getWidth();
+//        int intWidth = (int) width;
+//        panel.setPreferredSize(new Dimension(760,25));
+//        panel.setAlignmentX(JComponent.CENTER_ALIGNMENT);
+
+//        add(panel);
+        positieTekst.setHorizontalAlignment(SwingConstants.RIGHT);
         add(positieTekst);
         add(volgordeAdressen);
+        checkBox.setHorizontalAlignment(SwingConstants.LEFT);
         add(checkBox);
 
-        setPreferredSize(new Dimension(intWidth, 25));
+        setPreferredSize(new Dimension(680, 25));
+        GridBagLayout grid = new GridBagLayout();
+
+
         setLayout(new GridLayout(1, 3));
         setVisible(true);
     }
