@@ -22,14 +22,14 @@ public class Gui extends JFrame {
         String password = "";
 
 
-        setSize(400, 450);
+        setSize(500, 450);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setResizable(false);
         setLocationRelativeTo(null);
 
         JPanel mainPanel = new JPanel();
-        mainPanel.setSize(new Dimension(400, 450));
-        mainPanel.setPreferredSize(new Dimension(400, 450));
+        mainPanel.setSize(new Dimension(500, 450));
+        mainPanel.setPreferredSize(new Dimension(500, 450));
         add(mainPanel);
 
 
@@ -244,7 +244,7 @@ public class Gui extends JFrame {
         info.add(jl_adres);
         jl_afgeleverd.setHorizontalAlignment(SwingConstants.LEFT);
         info.add(jl_afgeleverd);
-        info.setPreferredSize(new Dimension(680,25));
+        info.setPreferredSize(new Dimension(780,25));
         info.setLayout(new GridLayout(1,3));
         mainPanel.add(info);
         for (int i = 0; i < gesorteedeAdressen.size(); i++) {
@@ -259,7 +259,7 @@ public class Gui extends JFrame {
 
 
         mainPanel.add(panel);
-        mainPanel.setSize(400, 600);
+        mainPanel.setSize(500, 600);
         mainPanel.setAlignmentX(CENTER_ALIGNMENT);
         setLocationRelativeTo(null);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
