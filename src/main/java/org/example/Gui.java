@@ -22,14 +22,14 @@ public class Gui extends JFrame {
         String password = "";
 
 
-        setSize(820, 450);
+        setSize(400, 450);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setResizable(false);
         setLocationRelativeTo(null);
 
         JPanel mainPanel = new JPanel();
-        mainPanel.setSize(new Dimension(500, 700));
-        mainPanel.setPreferredSize(new Dimension(500, 700));
+        mainPanel.setSize(new Dimension(400, 450));
+        mainPanel.setPreferredSize(new Dimension(400, 450));
         add(mainPanel);
 
 
@@ -234,6 +234,19 @@ public class Gui extends JFrame {
 //        System.out.println(locatie.adressen.size());
 //        System.out.println(gesorteedeAdressen.size());
 //        System.out.println("Startpunt: " + startPoint.getAdres());
+        JPanel info = new JPanel();
+        JLabel jl_positie = new JLabel("Volgorde:");
+        JLabel jl_adres = new JLabel("Adres:");
+        JLabel jl_afgeleverd = new JLabel("Afgeleverd:");
+        jl_positie.setHorizontalAlignment(SwingConstants.RIGHT);
+        info.add(jl_positie);
+        jl_adres.setHorizontalAlignment(SwingConstants.CENTER);
+        info.add(jl_adres);
+        jl_afgeleverd.setHorizontalAlignment(SwingConstants.LEFT);
+        info.add(jl_afgeleverd);
+        info.setPreferredSize(new Dimension(680,25));
+        info.setLayout(new GridLayout(1,3));
+        mainPanel.add(info);
         for (int i = 0; i < gesorteedeAdressen.size(); i++) {
             JPanel adresRegel = new AdresRegel(gesorteedeAdressen.get(i).getPostcode(), gesorteedeAdressen.get(i).getHuisnummer(),gesorteedeAdressen.get(i).getAdres(), i);
             if(i % 2 == 0){
@@ -246,7 +259,7 @@ public class Gui extends JFrame {
 
 
         mainPanel.add(panel);
-        mainPanel.setSize(800, 600);
+        mainPanel.setSize(400, 600);
         mainPanel.setAlignmentX(CENTER_ALIGNMENT);
         setLocationRelativeTo(null);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
